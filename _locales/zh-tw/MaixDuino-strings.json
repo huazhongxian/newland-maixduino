@@ -1,0 +1,27 @@
+{
+    "MaixDuino.newland_init|block": "MaixDuino初始化|Tx pin %tx|Rx pin %rx",
+    "MaixDuino.newland_gpio_control|block": "输入/输出%dir",
+    "MaixDuino.newland_pwm_control|block": "信号的空比设置%th",
+    "MaixDuino.newland_load_model|block": "模型加载%th",
+    "MaixDuino.newland_detect_model|block": "模型推理分析",
+
+    "MaixDuino.newland_volume_control|block": "MaixDuino音量%dir",
+    "MaixDuino.newland_volume_onOff|block": "MaixDuino提示音%dir",
+    "MaixDuino.newland_volume_set|block": "重置MaixDuino",
+    "MaixDuino.OnOffDirection.On|block":"開",
+    "MaixDuino.OnOffDirection.Off|block":"關",
+    "MaixDuino.newland_scan_items|block": "掃描商品",
+    "MaixDuino.VolumeNum.Volume5|block":"5",
+    "MaixDuino.VolumeNum.Volume4|block":"4",
+    "MaixDuino.VolumeNum.Volume3|block":"3",
+    "MaixDuino.VolumeNum.Volume2|block":"2",
+    "MaixDuino.VolumeNum.Volume1|block":"1",
+    "MaixDuino.VolumeNum.Volume0|block":"0",
+
+    "MaixDuino.GpicSet.setH|block":"设置引脚为高电平",
+    "MaixDuino.GpicSet.setL|block":"设置引脚为低电平",
+    "MaixDuino.GpicSet.get|block":"获取引脚的电平状态"
+
+  
+}
+
