@@ -122,7 +122,7 @@ namespace MaixDuino {
     if (tx >= 100 && tx <= 116) {
       txStr = 'pin' + (tx - 100);
     }
-    let jsonStr = '["GPIO", "' + tx + '","' + txStr + '"]';
+    let jsonStr = '["GPIO", "' + txStr + '","' + setValue + '"]';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
@@ -146,7 +146,7 @@ namespace MaixDuino {
   //% group="Basic" weight=98
   export function newland_load_model(th: string): void {
     //let a = '  ["KPU", "load", "diseases"]';
-    let jsonStr = '["KPU", "load", ' + th + ']';
+    let jsonStr = '["KPU", "load", "' + th + '"]';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
