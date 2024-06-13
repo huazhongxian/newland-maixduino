@@ -1,7 +1,7 @@
 {
     "MaixDuino.newland_init|block": "MaixDuino初始化|Tx pin %tx|Rx pin %rx",
     "MaixDuino.newland_gpio_control|block": "GPIO输入/输出|Tx pin %tx|设置 %dir",
-    "MaixDuino.newland_pwm_control|block": "信号的空比设置%th",
+    "MaixDuino.newland_pwm_control|block": "信号的空比值设置%th",
     "MaixDuino.newland_load_model|block": "加载目标检测模型%th",
     "MaixDuino.newland_detect_model|block": "目标检测",
     "MaixDuino.newland_detectionname|block": "目标名称",
