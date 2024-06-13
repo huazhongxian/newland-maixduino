@@ -37,11 +37,11 @@ namespace MaixDuino {
 
   export enum GpicSet {
     //% block=setH
-    setH = 'setH',
+    setH = 1,
     //% block=setL
-    setL = 'setL',
+    setL = 2,
     //% block=get
-    get = 'get',
+    get = 3,
   }
 
 
@@ -109,7 +109,15 @@ namespace MaixDuino {
   //% group="Basic" weight=98
   export function newland_gpio_control(tx: SerialPin, dir: GpicSet): void {
     //let a = '["GPIO", "pin4", "setH"]';
-    let jsonStr = '["GPIO", "' +tx+ '","' +dir+ '"]';
+    let setValue = 'get'
+    if (dir == 1) {
+      setValue = 'setH'
+    } else if (dir == 2) {
+      setValue = 'setL'
+    } else if (dir == 3) {
+      setValue = 'get'
+    }
+    let jsonStr = '["GPIO", "' +tx+ '","' +setValue+ '"]';
     let obj = JSON.parse(jsonStr);
     serial.writeLine(obj);
     basic.pause(100)
