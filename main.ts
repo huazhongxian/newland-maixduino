@@ -119,8 +119,7 @@ namespace MaixDuino {
       setValue = 'get'
     }
     let jsonStr = '["GPIO", "' +tx+ '","' +setValue+ '"]';
-    let obj = JSON.parse(jsonStr);
-    serial.writeLine(obj);
+    serial.writeLine(jsonStr);
     basic.pause(100)
   }
 
@@ -133,8 +132,7 @@ namespace MaixDuino {
   export function newland_pwm_control( th: number): void {
     //let a = '["PWM", 0]';
     let jsonStr = '["PWM", ' +th+ ']';
-    let obj = JSON.parse(jsonStr);
-    serial.writeLine(obj);
+    serial.writeLine(jsonStr);
     basic.pause(100)
   }
   /**
@@ -145,8 +143,7 @@ namespace MaixDuino {
   export function newland_load_model( th: string): void {
     //let a = '  ["KPU", "load", "diseases"]';
     let jsonStr = '["KPU", "load", ' +th+ ']';
-    let obj = JSON.parse(jsonStr);
-    serial.writeLine(obj);
+    serial.writeLine(jsonStr);
     basic.pause(100)
   }
 
