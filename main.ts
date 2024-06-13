@@ -75,7 +75,7 @@ namespace MaixDuino {
       // basic.showString(obj.Price)
       let diseasesValue = a;
       if (btnEvt) {
-             btnEvt(diseasesValue) // btna btnb  
+        btnEvt(diseasesValue) // btna btnb  
       }
       let cmd = 42;
       control.raiseEvent(EventBusSource.MES_BROADCAST_GENERAL_ID, 0x8900 + cmd)
@@ -118,7 +118,11 @@ namespace MaixDuino {
     } else if (dir == 3) {
       setValue = 'get'
     }
-    let jsonStr = '["GPIO", "' +tx+ '","' +setValue+ '"]';
+    let txStr = '';
+    if (tx >= 100 && tx <= 116) {
+      txStr = 'pin' + (tx - 100);
+    }
+    let jsonStr = '["GPIO", "' + tx + '","' + txStr + '"]';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
@@ -129,9 +133,9 @@ namespace MaixDuino {
   //% blockId=newland_pwm_control block="Newland  pwn duty cycle%th"
   //% group="Basic" weight=98
   //% th.min=0 th.max=100
-  export function newland_pwm_control( th: number): void {
+  export function newland_pwm_control(th: number): void {
     //let a = '["PWM", 0]';
-    let jsonStr = '["PWM", ' +th+ ']';
+    let jsonStr = '["PWM", ' + th + ']';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
@@ -140,9 +144,9 @@ namespace MaixDuino {
    */
   //% blockId=newland_load_model block="Newland  load model%th"
   //% group="Basic" weight=98
-  export function newland_load_model( th: string): void {
+  export function newland_load_model(th: string): void {
     //let a = '  ["KPU", "load", "diseases"]';
-    let jsonStr = '["KPU", "load", ' +th+ ']';
+    let jsonStr = '["KPU", "load", ' + th + ']';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
@@ -152,8 +156,7 @@ namespace MaixDuino {
   export function newland_detect_model(): void {
     //let a = '["KPU", "load", "diseases"]';
     let jsonStr = '["KPU", "detect"]';
-    let obj = JSON.parse(jsonStr);
-    serial.writeLine(obj);
+    serial.writeLine(jsonStr);
     basic.pause(100)
   }
 
