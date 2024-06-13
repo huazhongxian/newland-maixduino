@@ -9,7 +9,7 @@ load dependency
 namespace MaixDuino {
   //type起个新类型
 
-  type Evtxye = (x: string, y: string, e: string) => void
+  type Evtxye = (x: string) => void
 
   let btnEvt: Evtxye = null
 
@@ -66,15 +66,16 @@ namespace MaixDuino {
   serial.onDataReceived('\n', function () {
 
     let a = serial.readUntil('\n')
-    if (a.indexOf("<STX>") != -1) {
+    if (a.indexOf("[") != -1) {
 
     } else {
       // let b = '{"SKU":1002,"Name_CN":"瓜子","Name_PY":"guazi","Price":10.00}';
-      let obj = JSON.parse(a);
+      //let obj = JSON.parse(a);
       //basic.showNumber(1)
-      //   basic.showString(obj.Price)
+      // basic.showString(obj.Price)
+      let diseasesValue = a;
       if (btnEvt) {
-             btnEvt(obj.SKU, obj.Name_PY, obj.Price) // btna btnb
+             btnEvt(diseasesValue) // btna btnb  
       }
       let cmd = 42;
       control.raiseEvent(EventBusSource.MES_BROADCAST_GENERAL_ID, 0x8900 + cmd)
@@ -158,6 +159,14 @@ namespace MaixDuino {
     serial.writeLine(obj);
     basic.pause(100)
   }
+
+
+  //% blockId=newland_detectionname block="on detectio Name"
+  //% group="Basic" weight=51 draggableParameters=reporter blockGap=40
+  export function newland_detectionname(handler: (txt: string) => void) {
+    btnEvt = handler
+  }
+
 
 
 

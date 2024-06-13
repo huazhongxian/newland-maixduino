@@ -2,9 +2,9 @@
     "MaixDuino.newland_init|block": "MaixDuino初始化|Tx pin %tx|Rx pin %rx",
     "MaixDuino.newland_gpio_control|block": "输入/输出%dir",
     "MaixDuino.newland_pwm_control|block": "信号的空比设置%th",
-    "MaixDuino.newland_load_model|block": "模型加载%th",
-    "MaixDuino.newland_detect_model|block": "模型推理分析",
-
+    "MaixDuino.newland_load_model|block": "加载目标检测模型%th",
+    "MaixDuino.newland_detect_model|block": "目标检测",
+    "MaixDuino.newland_detectionname|block": "目标名称",
     "MaixDuino.newland_volume_control|block": "MaixDuino音量%dir",
     "MaixDuino.newland_volume_onOff|block": "MaixDuino提示音%dir",
     "MaixDuino.newland_volume_set|block": "重置MaixDuino",
