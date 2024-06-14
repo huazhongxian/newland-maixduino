@@ -13,6 +13,9 @@ namespace MaixDuino {
 
   let btnEvt: Evtxye = null
 
+
+
+
   export enum SerialPorts {
     PORT1 = 0,
     PORT2 = 1,
@@ -64,9 +67,8 @@ namespace MaixDuino {
 
 
   serial.onDataReceived('\n', function () {
-
+    basic.showNumber(8)
     let a = serial.readUntil('\n')
-    basic.showNumber(a)
     if (a.indexOf("[") != -1) {
       basic.showNumber(7)
     } else {
