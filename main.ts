@@ -67,11 +67,11 @@ namespace MaixDuino {
 
     let a = serial.readUntil('\n')
     if (a.indexOf("[") != -1) {
-
+      basic.showNumber(7)
     } else {
       // let b = '{"SKU":1002,"Name_CN":"瓜子","Name_PY":"guazi","Price":10.00}';
       //let obj = JSON.parse(a);
-      //basic.showNumber(1)
+      basic.showNumber(9)
       // basic.showString(obj.Price)
       let diseasesValue = a;
       if (btnEvt) {
