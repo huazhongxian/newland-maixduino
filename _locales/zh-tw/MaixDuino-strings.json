@@ -4,7 +4,7 @@
     "MaixDuino.newland_pwm_control|block": "信号的空比值设置%th",
     "MaixDuino.newland_load_model|block": "加载目标检测模型%th",
     "MaixDuino.newland_detect_model|block": "目标检测",
-    "MaixDuino.newland_detectionname|block": "目标名称",
+    "MaixDuino.newland_detectionname|block": "获得目标名称",
     "MaixDuino.newland_volume_control|block": "MaixDuino音量%dir",
     "MaixDuino.newland_volume_onOff|block": "MaixDuino提示音%dir",
     "MaixDuino.newland_volume_set|block": "重置MaixDuino",

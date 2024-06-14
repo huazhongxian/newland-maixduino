@@ -66,6 +66,7 @@ namespace MaixDuino {
   serial.onDataReceived('\n', function () {
 
     let a = serial.readUntil('\n')
+    basic.showNumber(a)
     if (a.indexOf("[") != -1) {
       basic.showNumber(7)
     } else {
