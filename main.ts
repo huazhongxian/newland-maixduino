@@ -65,24 +65,26 @@ namespace MaixDuino {
   }
 
 
+  function trim(n: string): string {
+    while (n.charCodeAt(n.length - 1) < 0x1f) {
+        n = n.slice(0, n.length - 1)
+    }
+    return n
+}
+
+
 
   serial.onDataReceived('\n', function () {
-    basic.showNumber(8)
     let a = serial.readUntil('\n')
-    if (a.indexOf("[") != -1) {
-      basic.showNumber(7)
-    } else {
-      // let b = '{"SKU":1002,"Name_CN":"瓜子","Name_PY":"guazi","Price":10.00}';
-      //let obj = JSON.parse(a);
-      basic.showNumber(9)
-      // basic.showString(obj.Price)
+    if (a.charAt(0) != '[') {
+     // basic.showNumber(6)
       let diseasesValue = a;
       if (btnEvt) {
-        btnEvt(diseasesValue) // btna btnb  
+        if (a.indexOf("bee") != -1 || a.indexOf("caterpillar") != -1 || a.indexOf("snail") != -1 || a.indexOf("none") != -1) {
+          btnEvt(diseasesValue) // btna btnb  
+          }
       }
-      let cmd = 42;
-      control.raiseEvent(EventBusSource.MES_BROADCAST_GENERAL_ID, 0x8900 + cmd)
-    }
+  }
 
   })
 
