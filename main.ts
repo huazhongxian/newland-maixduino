@@ -75,9 +75,12 @@ namespace MaixDuino {
 
 
   serial.onDataReceived('\n', function () {
+      basic.showNumber(9)
     let a = serial.readUntil('\n')
+      basic.showNumber(8)
     if (a.charAt(0) != '[') {
-     // basic.showNumber(6)
+      basic.showNumber(6)
+      basic.showString(a)
       let diseasesValue = a;
       if (btnEvt) {
         if (a.indexOf("bee") != -1 || a.indexOf("caterpillar") != -1 || a.indexOf("snail") != -1 || a.indexOf("none") != -1) {
