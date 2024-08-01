@@ -36,7 +36,7 @@ namespace MaixDuino {
     Volume3 = 3,
     //% block=Volume4
     Volume4 = 4,
-  }
+  } 
 
   export enum GpicSet {
     //% block=setH
@@ -98,9 +98,9 @@ namespace MaixDuino {
    * @param tx Tx pin; eg: SerialPin.P13
    * @param rx Rx pin; eg: SerialPin.P14
    */
-  //% blockId=newland_init block="Newland init|Tx pin %tx|Rx pin %rx"
+  //% blockId=newland_maixDuino_init block="Newland init|Tx pin %tx|Rx pin %rx"
   //% group="Basic" weight=100
-  export function newland_init(tx: SerialPin, rx: SerialPin): void {
+  export function newland_maixDuino_init(tx: SerialPin, rx: SerialPin): void {
     serial.redirect(tx, rx, BaudRate.BaudRate115200)
     serial.readString()
     serial.setRxBufferSize(128)
@@ -146,18 +146,18 @@ namespace MaixDuino {
   /**
    * @param th model name; eg: diseases
    */
-  //% blockId=newland_load_model block="Newland  load model%th"
+  //% blockId=newland_maixDuino_load_model block="Newland  load model%th"
   //% group="Basic" weight=98
-  export function newland_load_model(th: string): void {
+  export function newland_maixDuino_load_model(th: string): void {
     //let a = '  ["KPU", "load", "diseases"]';
     let jsonStr = '["KPU", "load", "' + th + '"]';
     serial.writeLine(jsonStr);
     basic.pause(100)
   }
 
-  //% blockId=newland_detect_model block="Newland model detect"
+  //% blockId=newland_maixDuino_detect_model block="Newland model detect"
   //% group="Basic" weight=98
-  export function newland_detect_model(): void {
+  export function newland_maixDuino_detect_model(): void {
     //let a = '["KPU", "load", "diseases"]';
     let jsonStr = '["KPU", "detect"]';
     serial.writeLine(jsonStr);
@@ -165,9 +165,9 @@ namespace MaixDuino {
   }
 
 
-  //% blockId=newland_detectionname block="on detectio Name"
+  //% blockId=newland_maixDuino_detectionname block="on detectio Name"
   //% group="Basic" weight=51 draggableParameters=reporter blockGap=40
-  export function newland_detectionname(handler: (txt: string) => void) {
+  export function newland_maixDuino_detectionname(handler: (txt: string) => void) {
     btnEvt = handler
   }
 

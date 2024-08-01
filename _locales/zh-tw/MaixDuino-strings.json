@@ -1,16 +1,16 @@
 {
-    "MaixDuino.newland_init|block": "MaixDuino初始化|Tx pin %tx|Rx pin %rx",
+    "MaixDuino.newland_maixDuino_init|block": "MaixDuino初始化|Tx pin %tx|Rx pin %rx",
     "MaixDuino.newland_gpio_control|block": "GPIO输入/输出|Tx pin %tx|设置 %dir",
     "MaixDuino.newland_pwm_control|block": "信号的空比值设置%th",
-    "MaixDuino.newland_load_model|block": "加载目标检测模型%th",
-    "MaixDuino.newland_detect_model|block": "目标检测",
-    "MaixDuino.newland_detectionname|block": "获得目标名称",
+    "MaixDuino.newland_maixDuino_load_model|block": "加载目标检测模型%th",
+    "MaixDuino.newland_maixDuino_detect_model|block": "目标检测",
+    "MaixDuino.newland_maixDuino_detectionname|block": "获得目标名称",
     "MaixDuino.newland_volume_control|block": "MaixDuino音量%dir",
     "MaixDuino.newland_volume_onOff|block": "MaixDuino提示音%dir",
     "MaixDuino.newland_volume_set|block": "重置MaixDuino",
-    "MaixDuino.OnOffDirection.On|block":"開",
-    "MaixDuino.OnOffDirection.Off|block":"關",
-    "MaixDuino.newland_scan_items|block": "掃描商品",
+    "MaixDuino.OnOffDirection.On|block":"开",
+    "MaixDuino.OnOffDirection.Off|block":"关",
+    "MaixDuino.newland_scan_items|block": "扫描商品",
     "MaixDuino.VolumeNum.Volume5|block":"5",
     "MaixDuino.VolumeNum.Volume4|block":"4",
     "MaixDuino.VolumeNum.Volume3|block":"3",
@@ -21,6 +21,5 @@
     "MaixDuino.GpicSet.setL|block":"设置引脚为低电平",
     "MaixDuino.GpicSet.get|block":"获取引脚的电平状态"
 
-  
-}
 
+}
